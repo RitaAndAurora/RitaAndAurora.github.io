@@ -33,16 +33,31 @@
 		}
 
 		.projects_container {
-			text-align: center;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 20px;
 			margin-bottom: 50px;
 			margin-top: 40px;
+			max-width: 900px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		.project {
-			width: 200px;
-			height: 200px;
-			display: inline-block;
-			margin-right: 10px;
+			aspect-ratio: 1;
+			border-radius: 20px;
+			overflow: hidden;
+			transition: transform 0.3s ease;
+		}
+
+		.project:hover {
+			transform: scale(1.05);
+		}
+
+		.project img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 
 		h2 {
@@ -60,24 +75,29 @@
 	
 	<div style="margin: auto;max-width:800px;padding: 10px;color:white;">
 		<h2>About</h2>
-		<p style="font-size:120%;"><b>Rita & Aurora</b> is just a sort of fancy branding name that I've given to my freelance audio developer <a href="https://ffont.github.io">self</a>.
+		<p style="font-size:120%;"><b>Rita & Aurora</b> is just a sort of fancy branding name that I've given to my freelance software developer <a href="https://ffont.github.io">self</a>.
 		Information about the projects I do (if any) will be linked here.</p>
 		<h2>Current projects</h2>
 
 		<div class="projects_container">
 			<div class="project">
 				<a href="https://ritaandaurora.github.io/ddrm-jfsebastian">
-					<img src="jf_sebastian_icon.png" style="width:100%" alt="J.F. Sebastian" />
+					<img src="jf_sebastian_icon.png" alt="J.F. Sebastian" />
 				</a>
 			</div>
 			<div class="project">
 				<a href="https://ritaandaurora.github.io/kijimi-babu-frik">
-					<img src="babu_frik_icon.png" style="width:100%" alt="Babu Frik" />
+					<img src="babu_frik_icon.png" alt="Babu Frik" />
 				</a>
 			</div>
 			<div class="project">
 				<a href="https://github.com/ffont/source/">
-					<img src="source_icon.png" style="width:100%" alt="SOURCE" />
+					<img src="source_icon.png" alt="SOURCE" />
+				</a>
+			</div>
+			<div class="project">
+				<a href="./studlab/">
+					<img src="studlab_icon.png" alt="StudLab" />
 				</a>
 			</div>
 		</div>

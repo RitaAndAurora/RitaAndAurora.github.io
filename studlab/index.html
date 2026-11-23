@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudLab</title>
+<meta name="description" content="StudLab is an iPad app for building brick models from LDraw parts. It collects no data.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/icon.png">
+<style>
+	:root {
+		--accent: #0b8a75;
+		--ink: #16201e;
+		--muted: #5b6966;
+		--paper: #ffffff;
+		--band: #f4f7f6;
+		--line: #dde5e3;
+		color-scheme: light dark;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--accent: #4fd3ba;
+			--ink: #e8eeec;
+			--muted: #9db0ab;
+			--paper: #121816;
+			--band: #19211f;
+			--line: #2a3532;
+		}
+	}
+	* { box-sizing: border-box; }
+	body {
+		margin: 0;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+		color: var(--ink);
+		background: var(--paper);
+		line-height: 1.55;
+		-webkit-font-smoothing: antialiased;
+	}
+	a { color: var(--accent); }
+	img { display: block; max-width: 100%; height: auto; }
+	.wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+	header { padding: 48px 0 32px; }
+	header .title { display: flex; align-items: center; gap: 16px; }
+	header .title img { width: 64px; height: 64px; border-radius: 14px; }
+	header h1 { font-size: 40px; margin: 0; }
+	header p { font-size: 18px; max-width: 42em; margin: 20px 0 0; }
+	header .status { color: var(--muted); font-size: 16px; margin-top: 12px; }
+
+	section { padding: 48px 0; border-top: 1px solid var(--line); }
+	section.band { background: var(--band); }
+	h2 { font-size: 28px; margin: 0 0 16px; }
+	p { margin: 0 0 12px; max-width: 42em; }
+	ul { margin: 0 0 12px; padding-left: 20px; max-width: 42em; }
+	li { margin: 4px 0; }
+
+	.shot { border-radius: 12px; border: 1px solid var(--line); }
+	.wide { margin-top: 24px; }
+	/* The other screenshots, in rows of the same height: each takes room in proportion to its width (4:3 or 3:4). */
+	.gallery { margin-top: 20px; display: grid; gap: 20px; }
+	.gallery .row { display: flex; gap: 20px; align-items: flex-start; }
+	.gallery .l { flex: 16 1 0; }
+	.gallery .p { flex: 9 1 0; }
+
+	.small { font-size: 14px; color: var(--muted); }
+	.small p { max-width: none; }
+
+	/* The developers' logo, in the text's color (its picture is only its shape), so it shows in dark mode too. */
+	.logo {
+		display: block;
+		width: 200px; height: 196px; margin: 8px 0 20px;
+		background: var(--ink);
+		-webkit-mask: url(images/logo.png) center / contain no-repeat;
+		mask: url(images/logo.png) center / contain no-repeat;
+		cursor: pointer;
+		transition: opacity 0.3s ease;
+	}
+
+	.logo:hover {
+		opacity: 0.7;
+	}
+
+	footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+
+	@media (max-width: 720px) {
+		header h1 { font-size: 32px; }
+		.gallery .row { flex-direction: column; }
+		.gallery .row > a { width: 100%; }
+	}
+</style>
+</head>
+<body>
+
+<header>
+	<div class="wrap">
+		<div class="title">
+			<img src="images/icon.png" alt="">
+			<h1>StudLab</h1>
+		</div>
+		<p>
+			StudLab is an iPad app for designing brick models in 3D. It works with the LDraw™ file format and parts library, and has advanced editing features such as part snapping and movable joints.
+			With StudLab you can build a model piece by piece, organize it into instruction steps, and then build it again step by step, as you would a set. You can export the instructions as a PDF, and the parts list for LEGO® Pick a Brick® or other online stores.
+		</p>
+		<p class="status">Coming soon to the App Store...</p>
+		<img class="shot wide" src="images/a1_cuca.jpg" alt="A dragon model in StudLab, with the parts catalog on the left and the pieces sidebar on the right" width="1600" height="1200">
+		<div class="gallery">
+			<div class="row">
+				<a class="p" href="images/a2_guspira_vertical.jpg"><img class="shot" src="images/a2_guspira_vertical.jpg" alt="A model on an upright iPad" width="900" height="1200" loading="lazy"></a>
+				<a class="l" href="images/a6_interactions.jpg"><img class="shot" src="images/a6_interactions.jpg" alt="Technic gears meshing, with the pieces sidebar listing them" width="1600" height="1200" loading="lazy"></a>
+			</div>
+			
+			<div class="row">
+				<a class="l" href="images/c1_import_omr.jpg"><img class="shot" src="images/c1_import_omr.jpg" alt="The list of OMR sets, with search, theme and favorites" width="1600" height="1200" loading="lazy"></a>
+				<a class="l" href="images/a4_port.jpg"><img class="shot" src="images/a4_port.jpg" alt="Set 6542 Launch &amp; Load Seaport open in StudLab" width="1600" height="1200" loading="lazy"></a>
+			</div>
+			<div class="row">
+				<a class="l" href="images/b2_instructions_drac.jpg"><img class="shot" src="images/b2_instructions_drac.jpg" alt="Instructions mode: the tray of pieces on the left, the model being built on the right" width="1600" height="1200" loading="lazy"></a>
+				<a class="p" href="images/b1_instructions_pizza.jpg"><img class="shot" src="images/b1_instructions_pizza.jpg" alt="Instructions mode on an upright iPad, with the tray below the model" width="900" height="1200" loading="lazy"></a>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section id="privacy">
+	<div class="wrap">
+		<h2>Privacy</h2>
+		<p>StudLab collects no data.</p>
+		<ul>
+			<li>No accounts, no analytics, no tracking and no advertising, and no third-party code that does any of these.</li>
+			<li>Models stay where you save them: on your iPad, or in the storage you choose in Files (such as iCloud Drive).</li>
+			<li>Settings are kept on your iPad.</li>
+		</ul>
+		<p>StudLab only goes online when you ask it to, and then connects directly to these services:</p>
+		<ul>
+			<li><strong>LDraw Official Model Repository</strong> (library.ldraw.org), when you open a set from it, to download the set's model and picture.</li>
+			<li><strong>LEGO® Pick a Brick®</strong>, only when you use one of its features (checking part price and availability, and retrieving a part's available colors). StudLab sends the element and part numbers being checked, and your device's language and region so prices come in your currency. Nothing else about you or your model is sent. These features are disabled by default, and can be turned on in Settings ▸ Parts Catalog.</li>
+		</ul>
+		<p>These services can see the requests themselves (for example your IP address); what they do with them is covered by their own privacy policies.</p>
+		<p class="small">Last updated 23 November 2026.</p>
+	</div>
+</section>
+
+<section class="band" id="credits">
+	<div class="wrap small">
+		<h2>Credits</h2>
+		<p>StudLab is developed by Rita &amp; Aurora.</p>
+		<a href="../" class="logo" role="img" aria-label="Rita &amp; Aurora - Back to main site"></a>
+		<p>LEGO®, Pick a Brick® and BrickLink are trademarks of the LEGO Group, which does not sponsor, authorize or endorse this app or this website.</p>
+		<p><strong>Parts.</strong> The parts' shapes come from the <a href="https://library.ldraw.org">LDraw.org Parts Library</a>, made by the LDraw community and licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. LDraw™ is a trademark of the Estate of James Jessiman.</p>
+		<p><strong>Part names, categories, years and colors.</strong> This information is combined from several sources, including the <a href="https://rebrickable.com">Rebrickable</a> database downloads and API, and the <a href="https://www.bricklink.com">BrickLink</a> catalog downloads and catalog pages. The optional LEGO® Pick a Brick® features, which check the prices and colors a part is currently sold in, connect to the Pick a Brick® service only when you use them. No Pick a Brick® data is bundled with or stored in the app.</p>
+		<p><strong>Part connections.</strong> Part connection data (studs, anti-studs, clips, pins and so on) is based on the <a href="https://github.com/RolandMelkert/LDCadShadowLibrary">LDCad Shadow Library</a> by Roland Melkert and contributors, licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. StudLab complements and extends it with its own part connection estimates and corrections. The result is published as the <a href="https://github.com/RitaAndAurora/StudLabShadowLibrary">StudLab Shadow Library</a>, under the same CC BY-SA 4.0 terms.</p>
+		<p><strong>Set models.</strong> The set models that can be imported through the "Import Set from OMR" feature come from the <a href="https://library.ldraw.org/omr">LDraw Official Model Repository</a> (OMR), and are contributed by their individual authors, most under the Creative Commons Attribution License 2.0. Information about every set author and license is made available within the app. The sets in the screenshots above, 6542 Launch &amp; Load Seaport and 10036 Pizza To Go, are by Robert Paciorek, under CCAL 2.0.</p>
+		<p><strong>Software.</strong> StudLab is written with Apple's frameworks only, and includes no code from other projects.</p>
+	</div>
+</section>
+
+<footer>
+	<div class="wrap">© 2026 Rita &amp; Aurora</div>
+</footer>
+
+</body>
+</html>
